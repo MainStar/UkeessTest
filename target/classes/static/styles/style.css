@@ -1,0 +1,13 @@
+tr{
+	border-bottom: 1px solid black;
+}
+.content{
+	margin: 1%;
+}
+.modal{
+    display:none;
+}
+#a-edit{
+    color:blue;
+    cursor:pointer;
+}

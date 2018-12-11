@@ -21,18 +21,9 @@ public class DataFactory {
         statement = connection.createStatement();
     }
 
-    public static void deleteEmployee(int empID) {
-        try {
-            statement.executeUpdate("delete from tblEmployees where empID=" + empID);
-            connection.commit();
-        } catch (SQLException e) {
-            try {
-                connection.rollback();
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
-            e.printStackTrace();
-        }
+    public static void deleteEmployee(int empID) throws SQLException {
+        statement.executeUpdate("delete from tblEmployees where empID=" + empID);
+        connection.commit();
     }
 
     public static void editEmployee(Employee employee) throws SQLException {
