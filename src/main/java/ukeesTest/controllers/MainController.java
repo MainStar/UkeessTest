@@ -3,6 +3,7 @@ package ukeesTest.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import ukeesTest.dao.DataFactory;
 import ukeesTest.model.Employee;
 
@@ -10,48 +11,55 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Controller
-public class MainController extends BaseController {
+public class MainController {
 
     private List<Employee> employees;
 
     @RequestMapping("/")
-    public String index(Model model){
+    public ModelAndView index(ModelAndView modelAndView){
         try {
-            employees = DataFactory.getEmployeesByPage(1);
+            employees = DataFactory.getEmployeesByPage(1, DataFactory.getEmployeesCount());
         } catch (SQLException e) {
             e.printStackTrace();
-            model.addAttribute("errorNumber", "500");
-            return "error";
+            modelAndView = new ModelAndView("error");
+            modelAndView.addObject("errorNumber", "500");
+            return modelAndView;
         }
-        model = generateModelForMainController(model, employees);
-        return "index";
+        modelAndView = new ModelAndView("index");
+        modelAndView.addObject("employees", employees);
+        return modelAndView;
     }
 
     @GetMapping("/{pageNumber}")
-    public String getPageByNumber(Model model, @PathVariable int pageNumber){
+    public ModelAndView getPageByNumber(ModelAndView modelAndView, @PathVariable int pageNumber){
         try {
-            employees = DataFactory.getEmployeesByPage(pageNumber);
-            model = generateModelForMainController(model, employees);
+            employees = DataFactory.getEmployeesByPage(pageNumber, DataFactory.getEmployeesCount());
+            modelAndView = new ModelAndView("index");
+            modelAndView.addObject("employees", employees);
         } catch (SQLException e) {
             e.printStackTrace();
-            model.addAttribute("errorNumber", "500");
-            return "error";
+            modelAndView.addObject("errorNumber", "500");
+            return modelAndView;
         }
-        return "index";
+        return modelAndView;
     }
 
     @GetMapping("/search/{searchFragment}")
-    public String searchEmployeeByFragment(Model model, @PathVariable String searchFragment) {
+    public ModelAndView searchEmployeeByFragment(ModelAndView modelAndView, @PathVariable String searchFragment) {
         try {
             employees = DataFactory.searchByFragment(searchFragment);
-            model.addAttribute("action", "found");
-            model.addAttribute("name", employees.get(0).getName());
-            model.addAttribute("department", employees.get(0).getDepartment().getDepName());
+            modelAndView = new ModelAndView("actions");
+            modelAndView.addObject("action", "found");
+            modelAndView.addObject("employeeId", employees.get(0).getEmployeeId());
+            modelAndView.addObject("name", employees.get(0).getName());
+            modelAndView.addObject("empActive", String.valueOf(employees.get(0).isEmpActive()));
+            modelAndView.addObject("department", employees.get(0).getDepartment().getDepName());
         } catch (SQLException e) {
             e.printStackTrace();
-            model.addAttribute("errorNumber", "500");
-            return "error";
+            modelAndView = new ModelAndView("error");
+            modelAndView.addObject("errorNumber", "500");
+            return modelAndView;
         }
-        return "actions";
+        return modelAndView;
     }
 }

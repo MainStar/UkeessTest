@@ -11,21 +11,20 @@ import java.sql.SQLException;
 @Controller
 public class EmployeeController extends BaseController {
 
-    @PutMapping("/editEmployee/{empId}")
+    @PutMapping("/employee/{empId}")
     public String editEmployee(Model model, @RequestBody Employee employee) {
         try {
             DataFactory.editEmployee(employee);
             Employee employee1 = DataFactory.getEmployeeById(employee.getEmployeeId());
-            model = generateModelForEmployeeController(model, employee, "edited");
+            model = generateModelForEmployeeController(model, employee1, "edited");
         } catch (SQLException e) {
-            e.printStackTrace();
             e.printStackTrace();
             model.addAttribute("errorNumber", "500");
         }
         return "actions";
     }
 
-    @GetMapping("/getEmployee/{empId}")
+    @GetMapping("/employee/{empId}")
     public String getEmployee(Model model, @PathVariable int empId) {
         Employee employee = null;
         try {
@@ -39,7 +38,7 @@ public class EmployeeController extends BaseController {
         return "actions";
     }
 
-    @RequestMapping("/deleteEmployee/{empId}")
+    @GetMapping("/employee/{empId}/delete")
     public String deleteEmployee(Model model,@PathVariable int empId) {
         Employee employee = null;
         try {

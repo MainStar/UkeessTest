@@ -22,7 +22,7 @@
 
 		var xhr = new XMLHttpRequest();
 		var id = window.localStorage.getItem("id");
-		xhr.open('PUT', 'editEmployee/' + id, true);
+		xhr.open('PUT', 'employee/' + id, true);
 		xhr.setRequestHeader("Content-type", "application/json");
 		xhr.onload = function(){
 			if(xhr.status == 200){
@@ -69,54 +69,20 @@
 					<th style="background: #808080">empID</th>
 					<th style="background: #808080">empName</th>
 					<th style="background: #808080">empActive</th>
-					<th>Dempdepartment</th>
+					<th>Department</th>
 					<th></th>
 				</tr>
-				<tr class="table-content">
-					<td><a href="getEmployee/${viewEmID_1}">View</a></td>
-					<td><a id="a-edit" onclick="edit(${editEmID_1})">Edit</a></td>
-					<td>${employeeId_1}</td>
-					<td>${name_1}</td>
-					<td>${empActive_1}</td>
-					<td>${depName_1}</td>
-					<td><a href="deleteEmployee/${deleteEmpId_1}">Delete</a></td>
-				</tr>
-				<tr>
-					<td><a href="getEmployee/${viewEmID_2}">View</a></td>
-					<td><a id="a-edit" onclick="edit(${editEmID_2})">Edit</a></td>
-                    <td>${employeeId_2}</td>
-                    <td>${name_2}</td>
-                    <td>${empActive_2}</td>
-                    <td>${depName_2}</td>
-                    <td><a href="deleteEmployee/${deleteEmpId_2}">Delete</a></td>
-				</tr>
-				<tr>
-					<td><a href="getEmployee/${viewEmID_3}">View</a></td>
-					<td><a id="a-edit" onclick="edit(${editEmID_3})">Edit</a></td>
-                    <td>${employeeId_3}</td>
-                    <td>${name_3}</td>
-                    <td>${empActive_3}</td>
-                    <td>${depName_3}</td>
-                    <td><a href="deleteEmployee/${deleteEmpId_3}">Delete</a></td>
-				</tr>
-				<tr>
-					<td><a href="getEmployee/${viewEmID_4}">View</a></td>
-					<td><a id="a-edit" onclick="edit(${editEmID_4})">Edit</a></td>
-                    <td>${employeeId_4}</td>
-                    <td>${name_4}</td>
-                    <td>${empActive_4}</td>
-                    <td>${depName_4}</td>
-                    <td><a href="deleteEmployee/${deleteEmpId_4}">Delete</a></td>
-				</tr>
-				<tr>
-					<td><a href="getEmployee/${viewEmID_5}">View</a></td>
-					<td><a id="a-edit" onclick="edit(${editEmID_5})">Edit</a></td>
-                    <td>${employeeId_5}</td>
-                    <td>${name_5}</td>
-                    <td>${empActive_5}</td>
-                    <td>${depName_5}</td>
-                    <td><a href="deleteEmployee/${deleteEmpId_5}">Delete</a></td>
-				</tr>
+				<#list employees as employee>
+					<tr class="table-content">
+						<td><a href="employee/${employee.employeeId}">View</a></td>
+						<td><a id="a-edit" onclick="edit(${employee.employeeId})">Edit</a></td>
+						<td>${employee.employeeId}</td>
+						<td>${employee.name}</td>
+						<td>${employee.empActive?string('true', 'false')}</td>
+						<td>${employee.department.depName}</td>
+						<td><a href="employee/${employee.employeeId}/delete">Delete</a></td>
+					</tr>
+				</#list>
 			</table>
 		</div>
 		<div class="navbar">
