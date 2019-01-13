@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="376a02c2-980b-4280-be11-641f8c5c70b4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ukeesTest/util/PropertyValues.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/database.properties" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ukeesTest/controllers/ControllerService.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/ukeesTest/controllers/EmployeeControlle.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ukeesTest/App.class" afterPath="$PROJECT_DIR$/target/classes/ukeesTest/App.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ukeesTest/controllers/MainController.class" afterPath="$PROJECT_DIR$/target/classes/ukeesTest/controllers/MainController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ukeesTest/dao/DataFactory.class" afterPath="$PROJECT_DIR$/target/classes/ukeesTest/dao/DataFactory.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ukeesTest/App.java" afterPath="$PROJECT_DIR$/src/main/java/ukeesTest/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ukeesTest/controllers/BaseController.java" afterPath="$PROJECT_DIR$/src/main/java/ukeesTest/controllers/BaseController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ukeesTest/controllers/EmployeeController.java" afterPath="$PROJECT_DIR$/src/main/java/ukeesTest/controllers/EmployeeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ukeesTest/controllers/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/ukeesTest/controllers/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ukeesTest/dao/DataFactory.java" afterPath="$PROJECT_DIR$/src/main/java/ukeesTest/dao/DataFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/actions.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/actions.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/actions.html" afterPath="$PROJECT_DIR$/target/classes/templates/actions.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/index.html" afterPath="$PROJECT_DIR$/target/classes/templates/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EmployeeController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EmployeeController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ukeesTest/controllers/EmployeeController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
@@ -63,6 +47,16 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -139,6 +133,12 @@
     <findStrings>
       <find>editedName</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -171,7 +171,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
         <option value="$PROJECT_DIR$/src/main/java/ukeesTest/util/PropertyValues.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/ukeesTest/App.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/actions.html" />
         <option value="$PROJECT_DIR$/src/main/java/ukeesTest/controllers/MainController.java" />
@@ -179,6 +178,7 @@
         <option value="$PROJECT_DIR$/src/main/java/ukeesTest/dao/DataFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/ukeesTest/controllers/BaseController.java" />
         <option value="$PROJECT_DIR$/src/main/java/ukeesTest/controllers/EmployeeController.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -918,14 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ukeesTest/model/Employee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1046,6 +1038,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
