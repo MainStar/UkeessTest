@@ -11,7 +11,7 @@ import java.sql.SQLException;
 @Controller
 public class EmployeeController extends BaseController {
 
-    @PutMapping("/employee/{empId}")
+    @PutMapping("/employees/{empId}")
     public String editEmployee(Model model, @RequestBody Employee employee) {
         try {
             DataFactory.editEmployee(employee);
@@ -24,7 +24,7 @@ public class EmployeeController extends BaseController {
         return "actions";
     }
 
-    @GetMapping("/employee/{empId}")
+    @GetMapping("/employees/{empId}")
     public String getEmployee(Model model, @PathVariable int empId) {
         Employee employee = null;
         try {
@@ -38,7 +38,7 @@ public class EmployeeController extends BaseController {
         return "actions";
     }
 
-    @GetMapping("/employee/{empId}/delete")
+    @GetMapping("/employees/{empId}/delete")
     public String deleteEmployee(Model model,@PathVariable int empId) {
         Employee employee = null;
         try {

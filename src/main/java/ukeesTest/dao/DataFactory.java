@@ -35,11 +35,12 @@ public class DataFactory {
     public static void editEmployee(Employee employee) throws SQLException {
         preparedStatement = connection.prepareStatement("update tblEmployees \n" +
                 "cross join (select dpID as dpid from tblDepartments where dpName = ?) id " +
-                "set empName = ?, empActive = ?, emp_dpID = id.dpid, where empID = ?");
+                "set empName = ?, empActive = ?, emp_dpID = id.dpid where empID = ?");
         preparedStatement.setString(1, employee.getDepartment().getDepName());
         preparedStatement.setString(2, employee.getName());
         preparedStatement.setBoolean(3, employee.isEmpActive());
         preparedStatement.setInt(4, employee.getEmployeeId());
+        preparedStatement.executeUpdate();
         connection.commit();
     }
 

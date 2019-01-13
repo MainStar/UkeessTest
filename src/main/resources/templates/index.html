@@ -22,7 +22,7 @@
 
 		var xhr = new XMLHttpRequest();
 		var id = window.localStorage.getItem("id");
-		xhr.open('PUT', 'employee/' + id, true);
+		xhr.open('PUT', 'employees/' + id, true);
 		xhr.setRequestHeader("Content-type", "application/json");
 		xhr.onload = function(){
 			if(xhr.status == 200){
@@ -74,13 +74,13 @@
 				</tr>
 				<#list employees as employee>
 					<tr class="table-content">
-						<td><a href="employee/${employee.employeeId}">View</a></td>
+						<td><a href="employees/${employee.employeeId}">View</a></td>
 						<td><a id="a-edit" onclick="edit(${employee.employeeId})">Edit</a></td>
 						<td>${employee.employeeId}</td>
 						<td>${employee.name}</td>
 						<td>${employee.empActive?string('true', 'false')}</td>
 						<td>${employee.department.depName}</td>
-						<td><a href="employee/${employee.employeeId}/delete">Delete</a></td>
+						<td><a href="employees/${employee.employeeId}/delete">Delete</a></td>
 					</tr>
 				</#list>
 			</table>
